@@ -68,13 +68,13 @@ namespace TodoApi.Controllers
             _context.Entry(item).State = EntityState.Modified;
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return  NoContent();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTodoItem(long id)
         {
-            var todoItem = await _context.TodoItems.FindAsync(id);
+            var todoItem =  await _context.TodoItems.FindAsync(id);
 
             if (todoItem == null)
             {
